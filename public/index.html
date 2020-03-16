@@ -19,7 +19,6 @@
       <ul class="navbar-nav mr-auto">
       </ul>
       <span class="navbar-text">
-        <a class="btn btn-primary" href="auth.html">LOGIN</a>
       </span>
     </div>
   </nav>
@@ -29,16 +28,53 @@
       <div class="col-12">
         <div class="jumbotron fondo">
           <h1 class="display-4">REBOOT SPOTIFY!!!</h1>
-          <p class="lead">Welcome to the wonderful world of music at Reboot Academy</p>
-          <hr class="my-4">
-          <p>Keep calm!!!!!!!</p>
-          <a class="btn btn-primary btn-lg" href="auth.html" role="button">Authenticate</a>
+          <div class="tab-content d-flex justify-content-start " id="nav-tabContent">
+            <span class="mt-3">Welcome to the wonderful world
+              of music at Reboot Academy </span>
         </div>
-      </div>
-    </div>
-  </div>
+          <span>Keep calm!!!!!!!</span>
+          
+
+ <nav class="d-flex justify-content-end col-10">
+   <div class="nav nav-tabs" id="nav-tab" role="tablist">
+     <a class="nav-item nav-link active" id="nav-login-tab" data-toggle="tab" href="#nav-login" role="tab"
+       aria-controls="nav-login" aria-selected="true">LOGIN</a>
+     <a class="nav-item nav-link" id="nav-signup-tab" data-toggle="tab" href="#nav-signup" role="tab"
+       aria-controls="nav-signup" aria-selected="false">SIGNUP</a>
+   </div>
+ </nav>
+
+ <div class="tab-content d-flex justify-content-end col-10 " id="nav-tabContent">
+   <div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
+     <div id="login">
+       <label for="inputEmail" class="sr-only">Email address</label>
+       <input type="email" id="login_email" class="form-control" placeholder="Email address" required="" autofocus="">
+
+       <label for="inputPassword" class="sr-only">Password</label>
+       <input type="password" id="login_password" class="form-control" placeholder="Password" required="">
+
+       <button class="btn btn-lg btn-primary btn-block" id="btn-login">Login</button>
+     </div>
+   </div>
+
+   <div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
+     <form class="form-signin">
+       <label for="inputEmail" class="sr-only">User Name</label>
+       <input type="text" id="user_name" class="form-control" placeholder="User Name" required="" autofocus="">
+
+       <label for="inputEmail" class="sr-only">Email address</label>
+       <input type="email" id="user_email" class="form-control" placeholder="Email address" required="" autofocus="">
+
+       <label for="inputPassword" class="sr-only">Password</label>
+       <input type="password" id="user_password" class="form-control" placeholder="Password" required="">
+
+       <button class="btn btn-lg btn-primary btn-block" id="btn-signup">Sign in</button>
+     </form>    
+   </div>
+ </div>
 
 
+ <!--Libreria Bootstrap-->
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

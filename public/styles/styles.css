@@ -34,3 +34,7 @@ h1 {
 .sombra {
     box-shadow: 5px 10px black;
 }
+
+.bloque {
+    display: inline-block;
+}
