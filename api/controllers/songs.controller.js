@@ -11,22 +11,22 @@ module.exports = {
 }
 function createSong (req, res) {
   SongsModel.create(req.body)
-    .then(user => {
-      res.json(user)
+    .then(song => {
+      res.json(song)
     })
 }
 
 function getAllSongs (req, res) {
   SongsModel
     .find()
-    .then(response => res.json(response))
+    .then(songs => res.json(songs))
     .catch((err) => handleError(err, res))
 }
 
 function getSongsById (req, res) {
   SongsModel
     .findById(req.params.id)
-    .then(response => res.json(response))
+    .then(song => res.json(song))
     .catch((err) => handleError(err, res))
 }
 
@@ -35,6 +35,6 @@ function deleteSongById (req, res) {
     .remove({
       _id: req.params.id
     })
-    .then(response => res.json(response))
+    .then(song => res.json(song))
     .catch(err => handleError(err, res))
 }

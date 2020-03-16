@@ -4,8 +4,7 @@ const Schema = moongose.Schema
 const songsSchema = new Schema({
   title: String,
   year: Number,
-  theme: String,
-  song_url: 'https:fhbdshjfbdhf'
+  theme: String
 })
 
 const song = moongose.model('Song', songsSchema)
