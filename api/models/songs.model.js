@@ -1,17 +1,13 @@
-/* const Schema = moongose.Schema;
-const moongose = require('mongoose');
+const moongose = require('mongoose')
+const Schema = moongose.Schema
 
 const songsSchema = new Schema({
-    title: String,
-    artist: {
-        type: moongose.Schema.Types.ObjectId,
-        ref: "artist"
-    },
-    year: Number,
-    theme: String,
-    song_url: 'https:fhbdshjfbdhf'
+  title: String,
+  year: Number,
+  theme: String,
+  song_url: 'https:fhbdshjfbdhf'
 })
 
-const song = moongose.model('Song', songsSchema);
+const song = moongose.model('Song', songsSchema)
 
-module.exports = songs; */
+module.exports = song

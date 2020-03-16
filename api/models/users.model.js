@@ -26,15 +26,10 @@ const userSchema = new mongoose.Schema({
     required: false,
     default: 'regular'
   },
-      avatarUrl: {
-          type: String,
-          default: 'https://image.freepik.com/iconen-gratis/pinguin_318-113071.jpg'
-        },
-        favouriteList: [{
-          type: moongose.Schema.Types.ObjectId,
-          ref: "songs"
-        }], 
- 
+  avatarUrl: {
+    type: String,
+    default: 'https://image.freepik.com/iconen-gratis/pinguin_318-113071.jpg'
+  },
   createdAt: {
     type: Number,
     default: Date.now() // Get a timestamp :)

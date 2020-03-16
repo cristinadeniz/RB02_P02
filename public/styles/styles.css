@@ -1,0 +1,36 @@
+h1 {
+    color: blue
+}
+
+.img-fondo {
+    background-image: url("../img/fondo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+.fondo {
+    background-color: rgba(188, 188, 190, 0.952);
+    opacity: 0.7;
+    border-radius: 2.5%;
+    
+}
+
+.sombra {
+    box-shadow: 5px 10px black;
+}
