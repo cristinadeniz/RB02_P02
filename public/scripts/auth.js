@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-undef
 const api = axios.create({
-  baseURL: 'api/',
+  baseURL: 'http://localhost:3000/api/',
   timeout: 1000
 })
 
@@ -37,6 +37,7 @@ document.getElementById('btn-login').addEventListener('click', (event) => {
   api
     .post('auth/login', newUser)
     .then(function (response) {
+      console.log(response)
       if (response.data.error) {
         alert('WRONG PASSWORD')
       } else {
