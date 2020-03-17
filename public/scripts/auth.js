@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-undef
 const api = axios.create({
-  baseURL: 'api/',
+  baseURL: 'http://localhost:3000/api/',
   timeout: 1000
 })
 
@@ -21,7 +21,8 @@ document.getElementById('btn-signup').addEventListener('click', (event) => {
       localStorage.setItem('token', response.data.token)
       localStorage.setItem('name', response.data.username)
       localStorage.setItem('email', response.data.email)
-      location.assign('logeado.html')
+      localStorage.setItem('id', response.data.userID)
+      location.assign('home.html')
     })
     .catch(function (error) {
       console.log(error.response)
@@ -44,7 +45,8 @@ document.getElementById('btn-login').addEventListener('click', (event) => {
         localStorage.setItem('token', response.data.token)
         localStorage.setItem('name', response.data.username)
         localStorage.setItem('email', response.data.email)
-        location.assign('logeado.html')
+        localStorage.setItem('id', response.data.userID)
+        location.assign('home.html')
       }
     })
     .catch(function (error) {
