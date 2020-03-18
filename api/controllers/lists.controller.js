@@ -15,6 +15,7 @@ function createFavouriteList (req, res) {
   FavouriteList
     .create(req.body)
     .then(favouriteList => res.json(favouriteList))
+    .catch(err => console.log(err))
 }
 
 function deleteFavouriteSongById (req, res) {
@@ -34,14 +35,17 @@ function addSongToList (req, res) {
       list.songs.push(songId)
       list.save()
         .then(res.json(list))
+        .catch(err => console.log(err))
     })
+    .catch(err => console.log(err))
 }
 
 function getAllListsByUser (req, res) {
   const userId = req.params.id
   FavouriteList.find({ owner: userId })
-    .populate('favouriteList')
+    .populate('songs')
     .then(lists => {
       res.json(lists)
     })
+    .catch(err => console.log(err))
 }

@@ -24,11 +24,10 @@ h1 {
         font-size: 3.5rem;
     }
 }
+
 .fondo {
     background-color: rgba(188, 188, 190, 0.952);
-    opacity: 0.7;
     border-radius: 2.5%;
-    
 }
 
 .sombra {
@@ -37,4 +36,8 @@ h1 {
 
 .bloque {
     display: inline-block;
+}
+
+.form {
+    margin: auto;
 }

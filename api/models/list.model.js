@@ -6,7 +6,7 @@ const favouriteListSchema = new Schema({
   name: String,
   songs: [{
     type: moongose.Schema.Types.ObjectId,
-    ref: 'songs'
+    ref: 'Song'
   }]
 })
 

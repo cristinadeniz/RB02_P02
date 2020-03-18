@@ -7,13 +7,21 @@ const {
 module.exports = {
   getAllSongs,
   getSongById,
-  deleteSongById
+  deleteSongById,
+  createSong
 }
 
 function getAllSongs (req, res) {
   SongsModel
     .find()
     .then(songs => res.json(songs))
+    .catch((err) => handleError(err, res))
+}
+
+function createSong (req, res) {
+  SongsModel
+    .create(req.body)
+    .then(song => res.json(song))
     .catch((err) => handleError(err, res))
 }
 
