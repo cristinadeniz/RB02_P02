@@ -1,19 +1,13 @@
 const SongsModel = require('../models/songs.model')
+
 const {
   handleError
 } = require('../utils')
 
 module.exports = {
-  createSong,
   getAllSongs,
-  getSongsById,
+  getSongById,
   deleteSongById
-}
-function createSong (req, res) {
-  SongsModel.create(req.body)
-    .then(song => {
-      res.json(song)
-    })
 }
 
 function getAllSongs (req, res) {
@@ -23,7 +17,7 @@ function getAllSongs (req, res) {
     .catch((err) => handleError(err, res))
 }
 
-function getSongsById (req, res) {
+function getSongById (req, res) {
   SongsModel
     .findById(req.params.id)
     .then(song => res.json(song))

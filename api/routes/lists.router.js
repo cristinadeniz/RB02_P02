@@ -2,13 +2,13 @@ const router = require('express').Router()
 
 const {
   deleteFavouriteSongById,
-  updateFavouriteSongUser,
+  addSongToList,
   createFavouriteList,
   getAllListsByUser
 } = require('../controllers/lists.controller')
 
 router.post('/', createFavouriteList)
-router.put('/:id', updateFavouriteSongUser)
+router.post('/:id', addSongToList)
 router.delete('/:id', deleteFavouriteSongById)
 router.get('/:id', getAllListsByUser)
 

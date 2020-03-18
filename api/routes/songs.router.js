@@ -1,15 +1,13 @@
 const router = require('express').Router()
 
 const {
-  createSong,
   getAllSongs,
-  getSongsById,
+  getSongById,
   deleteSongById
 } = require('../controllers/songs.controller')
 
-router.post('/', createSong)
 router.get('/', getAllSongs)
-router.get('/:id', getSongsById)
+router.get('/:id', getSongById)
 router.delete('/:id', deleteSongById)
 
 module.exports = router

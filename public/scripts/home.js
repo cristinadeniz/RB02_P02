@@ -9,4 +9,7 @@ const userName = localStorage.getItem('name')
 
 spanName.innerHTML = userName
 
-//api.get('')
+var div = document.getElementById('test')
+var titulo = document.createElement('h2')
+titulo.innerText = 'Me pareces una caca'
+div.appendChild(titulo)

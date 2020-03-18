@@ -1,5 +1,4 @@
-const FavouriteList = require('../models/favouriteList.model')
-const User = require('../models/users.model')
+const FavouriteList = require('../models/list.model')
 
 const {
   handleError
@@ -7,14 +6,14 @@ const {
 
 module.exports = {
   deleteFavouriteSongById,
-  updateFavouriteSongUser, 
+  addSongToList,
   createFavouriteList,
   getAllListsByUser
 }
 
 function createFavouriteList (req, res) {
   FavouriteList
-  .create(req.body) 
+    .create(req.body)
     .then(favouriteList => res.json(favouriteList))
 }
 
@@ -27,14 +26,15 @@ function deleteFavouriteSongById (req, res) {
     .catch(err => handleError(err, res))
 }
 
-function updateFavouriteSongUser (req, res) {
-  FavouriteList
-    .findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true
+function addSongToList (req, res) {
+  const listId = req.params.id
+  const songId = req.body.newSong
+  FavouriteList.findById(listId)
+    .then(list => {
+      list.songs.push(songId)
+      list.save()
+        .then(res.json(list))
     })
-    .then(response => res.json(response))
-    .catch((err) => handleError(err, res))
 }
 
 function getAllListsByUser (req, res) {

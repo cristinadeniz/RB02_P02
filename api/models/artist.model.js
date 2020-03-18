@@ -1,4 +1,4 @@
-/* const moongose = require('mongoose')
+const moongose = require('mongoose')
 
 const Schema = moongose.Schema
 const artistSchema = new Schema({
@@ -11,4 +11,3 @@ const artistSchema = new Schema({
 const artist = moongose.model('Artist', artistSchema)
 
 module.exports = artist
-*/
