@@ -5,7 +5,8 @@ module.exports = {
   getAllUsers,
   getUserById,
   deleteUserById,
-  updateUser
+  updateUser, 
+  createUser
 }
 
 function getAllUsers (req, res) {
@@ -37,4 +38,11 @@ function updateUser (req, res) {
     })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
+}
+
+function createUser(req, res) {
+  UserModel.create(req.body)
+    .then(user => {
+      res.json(user)
+    })
 }

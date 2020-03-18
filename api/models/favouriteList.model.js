@@ -2,7 +2,7 @@ const moongose = require('mongoose')
 const Schema = moongose.Schema
 
 const favouriteListSchema = new Schema({
-  onwer: String, // _idUser
+  owner: String, // _idUser
   name: String,
   songs: [{
     type: moongose.Schema.Types.ObjectId,
