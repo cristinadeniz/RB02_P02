@@ -23,7 +23,6 @@ api.get(`lists/${localStorage.getItem('id')}`)
         list.songs.forEach(song => {
           const parrafo = document.createElement('p')
           parrafo.innerHTML = song.title
-          
           li.appendChild(parrafo)
           divListSongs.appendChild(parrafo)
         })
@@ -31,12 +30,4 @@ api.get(`lists/${localStorage.getItem('id')}`)
       ul.appendChild(li)
     })
     divLists.appendChild(ul)
-  
-
-
-this.addEventListener('click', () => {
-   list.songs.forEach(song => {
-      song.song_url.play()
-})
-})
-})
+  })

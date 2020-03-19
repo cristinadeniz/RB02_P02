@@ -13,21 +13,35 @@ module.exports = {
 
 function getAllSongs (req, res) {
   SongsModel
-    .find()
+    .find({
+      headers: {
+        token: localStorage.getItem('token')
+      }
+    })
     .then(songs => res.json(songs))
     .catch((err) => handleError(err, res))
 }
 
 function createSong (req, res) {
   SongsModel
-    .create(req.body)
+    .create((req.body),
+      {
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
     .then(song => res.json(song))
     .catch((err) => handleError(err, res))
 }
 
 function getSongById (req, res) {
   SongsModel
-    .findById(req.params.id)
+    .findById((req.params.id),
+      {
+        headers: {
+          token: localStorage.getItem('token')
+        }
+      })
     .then(song => res.json(song))
     .catch((err) => handleError(err, res))
 }
@@ -36,6 +50,10 @@ function deleteSongById (req, res) {
   SongsModel
     .remove({
       _id: req.params.id
+    }, {
+      headers: {
+        token: localStorage.getItem('token')
+      }
     })
     .then(song => res.json(song))
     .catch(err => handleError(err, res))

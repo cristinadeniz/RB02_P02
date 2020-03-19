@@ -7,10 +7,10 @@ const listsRouter = require('./lists.router')
 
 const { authUser } = require('../utils') // Authenticated Route
 
-router.use('/users', usersRouter)
 router.use('/auth', authRouter)
-router.use('/songs', songsRouter)
-router.use('/lists', listsRouter)
+router.use('/users', authUser, usersRouter)
+router.use('/songs', authUser, songsRouter)
+router.use('/lists', authUser, listsRouter)
 
 router.get('/whoami', authUser, (req, res) => {
   res.send(`hi there! ${res.locals.user.name}`)
