@@ -10,37 +10,21 @@ module.exports = {
 
 function getAllUsers (req, res) {
   UserModel
-    .find({
-      headers: {
-        token: localStorage.getItem('token')
-      }
-    })
+    .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function getUserById (req, res) {
   UserModel
-    .findById((req.params.id),
-      {
-        headers: {
-          token: localStorage.getItem('token')
-        }
-      })
+    .findById((req.params.id))
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
 
 function deleteUserById (req, res) {
   UserModel
-    .remove({
-      _id: req.params.id
-    },
-    {
-      headers: {
-        token: localStorage.getItem('token')
-      }
-    })
+    .remove({ _id: req.params.id })
     .then(response => res.json(response))
     .catch(err => handleError(err, res))
 }
@@ -50,11 +34,6 @@ function updateUser (req, res) {
     .findByIdAndUpdate(req.params.id, req.body, {
       new: true,
       runValidators: true
-    },
-    {
-      headers: {
-        token: localStorage.getItem('token')
-      }
     })
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))

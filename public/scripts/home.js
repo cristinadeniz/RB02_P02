@@ -12,7 +12,8 @@ spanName.innerHTML = userName
 const divLists = document.getElementById('lists')
 const divListSongs = document.getElementById('listSongs')
 
-api.get(`lists/${localStorage.getItem('id')}`)
+api.get(`lists/${localStorage.getItem('id')}`,
+  { headers: { token: localStorage.getItem('token') } })
   .then(response => {
     const ul = document.createElement('ul')
     response.data.forEach(list => {
@@ -20,9 +21,16 @@ api.get(`lists/${localStorage.getItem('id')}`)
       li.innerHTML = list.name
 
       li.addEventListener('click', () => {
+        divListSongs.innerHTML = ''
+
         list.songs.forEach(song => {
           const parrafo = document.createElement('p')
+          parrafo.addEventListener('click', () => {
+            document.getElementById('audio').setAttribute('src', song.song_url)
+            document.getElementById('audio').play()
+          })
           parrafo.innerHTML = song.title
+
           li.appendChild(parrafo)
           divListSongs.appendChild(parrafo)
         })
