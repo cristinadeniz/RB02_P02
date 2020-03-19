@@ -41,3 +41,17 @@ h1 {
 .form {
     margin: auto;
 }
+
+.styleBoxs {
+    background-color: #9D9EE3;
+    width: 200px;
+    margin-left: 5%;
+    padding: 10px 10px;
+    border-radius: 5%;
+
+}
+
+.play {
+    margin: 10%
+}
+

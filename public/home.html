@@ -2,32 +2,35 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body class="img-fondo">
-	<div class="container fondo mt-5 sombra">
-		<div class="row ">
-			<div class="col-12">
-				<div class="jumbotron fondo">
-					<a class="btn btn-primary d-flex btn-sm ml-auto col-2 justify-content-center" id="logout">LOGOUT</a>
-					<h1 class="display-4">Hello <span id="user-name"></span></h1>
-					<p class="lead">Your favourite music:</p>
-					<div id="lists"></div>
-					<div id="listSongs"></div>
-				</div>
-			</div>
-		</div>
-	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-	<script src="./scripts/home.js"></script>
-	<script src="./scripts/logout.js"></script>
+<nav class="navbar navbar-light">
+  <a class="navbar-brand text-primary ml-3" href="#">
+    <img src="./img/logoMusic.png" width="30" height="30" class="d-inline-block align-top" alt="nombre de api"> REBOOT SPOTIFY</a>
+  </nav>
+  <h1 class="ml-5">Hello <span id="user-name"></span></h1>
+
+
+
+
+   <div id="lists" class="styleBoxs"></div>
+   <div id="listSongs" class="styleBoxs"></div>
+
+
+<audio id="test" src="https://audio-video.gnu.org/audio/Fenster-Free-Software-Song.ogg" preload="metadata"
+  controls class="play"></audio>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script src="./scripts/home.js"></script>
+  <script src="./scripts/logout.js"></script>
 </body>
 
 </html>
