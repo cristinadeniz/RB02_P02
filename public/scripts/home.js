@@ -10,7 +10,7 @@ const userName = localStorage.getItem('name')
 spanName.innerHTML = userName
 
 const divLists = document.getElementById('lists')
-// const divListSongs = Aqui tienes que recoger el div donde vas a guardar las canciones
+const divListSongs = document.getElementById('listSongs')
 
 api.get(`lists/${localStorage.getItem('id')}`)
   .then(response => {
@@ -22,11 +22,14 @@ api.get(`lists/${localStorage.getItem('id')}`)
       li.addEventListener('click', () => {
         list.songs.forEach(song => {
           // Aqui es donde tienes los nombres de las canciones!
+          const parrafo = document.createElement('p')
+          parrafo.innerHTML = song.title
+          
+          li.appendChild(parrafo)
+          divListSongs.appendChild(parrafo)
         })
       })
-
       ul.appendChild(li)
     })
-
     divLists.appendChild(ul)
   })
