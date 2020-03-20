@@ -43,17 +43,18 @@ api.get(`lists/${localStorage.getItem('id')}`,
   })
 
 const listas = document.getElementById('listas')
-api.get(`songs/${localStorage.getItem('id')}`,
+api.get('songs',
   { headers: { token: localStorage.getItem('token') } })
   .then(response => {
-    const ulSongs = document.createElement('ul')
+    console.log(response)
     response.data.forEach(song => {
+      const ulSongs = document.createElement('ul')
+      ulSongs.setAttribute('class', 'songColor')
       ulSongs.innerText = song.title
       ulSongs.addEventListener('click', () => {
         document.getElementById('audio').setAttribute('src', song.song_url)
         document.getElementById('audio').play()
       })
-      ulSongs.appendChild(listas)
+      listas.appendChild(ulSongs)
     })
-    listas.appendChild(ulSongs)
   })

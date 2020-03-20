@@ -45,15 +45,17 @@ h1 {
 }
 
 #listas {
-     background-color: #E9EBEF;
-     opacity: 0.6;
-     width: 200px;
-     margin-left: 3.5%;
-     padding: 10px 10px;
-     border-radius: 50%;
-     float: right;
-     margin-right: 40%;
+    
+     border: 2px white;
+     float: right;  
+     margin-right: 50%;
+     margin-top: -10%;
 }
+
+.songColor {
+    color: white;
+}
+
 .play {
     margin: 5%;
     background-color: #E9EBEF;
