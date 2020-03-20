@@ -8,27 +8,32 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
+  <link rel="icon" href="./img/logoMusic.png" type="image/png" />
+
 </head>
 
-<body class="img-fondo">
+  <body class="img-fondo">
 
-<nav class="navbar navbar-light">
-  <a class="navbar-brand text-primary ml-3" href="#">
-    <img src="./img/logoMusic.png" width="30" height="30" class="d-inline-block align-top" alt="nombre de api"> REBOOT SPOTIFY</a>
-<a class="btn btn-primary" id="logout">LOGOUT</a>
-  </nav>
-  <h1 class="ml-5">Hello <span id="user-name"></span></h1>
+    <nav class="navbar navbar-light">
+      <a class="navbar-brand text-primary ml-3 text-primary" href="#">
+        <img src="./img/logoMusic.png" width="30" height="30" class="d-inline-block align-top" alt=" nombre de
+          api"> REBOOT SPOTIFY</a>
+      <a class="btn btn-primary mt-3" id="logout">LOGOUT</a>
+    </nav>
+    <h1 class="ml-5">Hello <span id="user-name"></span></h1>
 
-   <div id="lists" class="styleBoxs"></div>
-   <div id="listSongs" class="styleBoxs"></div>
+    <div id="lists" class="styleBoxs"></div>
+    <div id="listSongs"></div> 
+
+    <div id="listas"></div>
 
 
-  <audio id="audio" src="https://audio-video.gnu.org/audio/Fenster-Free-Software-Song.ogg" preload="metadata"
-  controls class="play"></audio>
+    <audio id="audio" src="https://audio-video.gnu.org/audio/Fenster-Free-Software-Song.ogg" preload="metadata"
+    controls class="play"></audio>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
-  <script src="./scripts/home.js"></script>
-  <script src="./scripts/logout.js"></script>
-</body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script src="./scripts/home.js"></script>
+    <script src="./scripts/logout.js"></script>
+  </body>
 
 </html>
